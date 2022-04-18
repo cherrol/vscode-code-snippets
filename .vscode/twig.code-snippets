@@ -1,0 +1,77 @@
+{
+  "no-link": {
+    "prefix": "a",
+    "body": ["<a class=\"$1\"></a>"],
+    "description": "添加一个空链接"
+  },
+  "link blank": {
+    "prefix": "a",
+    "body": ["<a class=\"$1\" href=\"\" target=\"_blank\">$1</a>"],
+    "description": "新标签页打开链接"
+  },
+  "image full width": {
+    "prefix": "img",
+    "body": ["<img class=\"w-full\" src=\"{{ base_path ~ '$1' }}\" alt=\"\">"],
+    "description": "宽度铺满"
+  },
+  "if one-line": {
+    "prefix": "if",
+    "body": ["{% if $1 %}{% endif %}"],
+    "description": "一行输出"
+  },
+  "if multi-line": {
+    "prefix": "if",
+    "body": ["{%- if $1 ~%}", "{%- endif ~%}"],
+    "description": "多行输出"
+  },
+  "if else one-line": {
+    "prefix": "if else",
+    "body": ["{% if $1 %}{% else %}{% endif %}"],
+    "description": "一行输出"
+  },
+  "if else multi-line": {
+    "prefix": "if else",
+    "body": ["{%- if $1 ~%}", "{%- else ~%}", "{%- endif ~%}"],
+    "description": "多行输出"
+  },
+  "set one-line": {
+    "prefix": "set",
+    "body": ["{%- set $1 -%}"],
+    "description": "一行输出"
+  },
+  "set block": {
+    "prefix": "set",
+    "body": ["{%- set -%}", "{%- endset -%}"],
+    "description": "块输出"
+  },
+  "escape": {
+    "prefix": "escape",
+    "body": ["{{- include('$1') | escape ~}}"],
+    "description": "escape"
+  },
+  "include 导入模板": {
+    "prefix": "include",
+    "body": ["{{- include('$1') ~}}"],
+    "description": "include"
+  },
+  "for multi-line": {
+    "prefix": "for",
+    "body": ["{%- for item in [", "  $1", "] ~%}", "{%- endfor ~%}"],
+    "description": "多行循环"
+  },
+  "json 格式化输出": {
+    "prefix": "json",
+    "body": ["{{ $1|json_encode() }}"],
+    "description": "json"
+  },
+  "kint 输出变量": {
+    "prefix": "kint",
+    "body": ["{{ kint($1) }}"],
+    "description": "kint"
+  },
+  "library 导入": {
+    "prefix": "lib",
+    "body": ["{{ attach_library('$1') }}"],
+    "description": "library"
+  }
+}
